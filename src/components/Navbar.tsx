@@ -26,7 +26,9 @@ export function Navbar() {
       setIsScrolled(window.scrollY > 20);
 
       // Simple active link detector
-      const sections = navLinks.map(l => document.getElementById(l.href.replace("#", "")));
+      const sections = navLinks.map((l) =>
+        document.getElementById(l.href.replace("#", ""))
+      );
       const scrollPosition = window.scrollY + 150;
 
       for (const section of sections) {
@@ -65,7 +67,9 @@ export function Navbar() {
           id="nav-logo"
         >
           {PERSONAL_INFO.logoName}
-          <span className="text-accent underline underline-offset-4 decoration-1 font-normal">.Dev</span>
+          <span className="text-accent underline underline-offset-4 decoration-1 font-normal">
+            .Dev
+          </span>
         </motion.a>
 
         {/* Desktop Menu */}
@@ -78,7 +82,9 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               className={`font-mono text-xs tracking-wider transition-all duration-300 relative py-1 hover:text-white ${
-                activeSection === link.href ? "text-primary font-medium" : "text-neutral-400"
+                activeSection === link.href
+                  ? "text-primary font-medium"
+                  : "text-neutral-400"
               }`}
               id={`nav-link-${link.label.toLowerCase().replace(" ", "-")}`}
             >
@@ -92,23 +98,6 @@ export function Navbar() {
               )}
             </motion.a>
           ))}
-
-          {/* Social Anchor or Status Capsule */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex items-center gap-2 bg-primary/10 border border-primary/20 px-3.5 py-1.5 rounded-full"
-            id="nav-status-pouch"
-          >
-            <div className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </div>
-            <span className="font-mono text-[10px] tracking-widest text-[#a68b6d] uppercase">
-              Available to craft
-            </span>
-          </motion.div>
         </div>
 
         {/* Mobile Hamburger toggle */}
@@ -142,9 +131,13 @@ export function Navbar() {
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`font-display text-lg tracking-wide transition-colors py-1 ${
-                    activeSection === link.href ? "text-primary font-medium" : "text-neutral-300"
+                    activeSection === link.href
+                      ? "text-primary font-medium"
+                      : "text-neutral-300"
                   }`}
-                  id={`mobile-nav-link-${link.label.toLowerCase().replace(" ", "-")}`}
+                  id={`mobile-nav-link-${link.label
+                    .toLowerCase()
+                    .replace(" ", "-")}`}
                 >
                   {link.label}
                 </a>

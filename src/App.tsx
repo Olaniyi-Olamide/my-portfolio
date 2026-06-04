@@ -5,17 +5,19 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { 
-  ArrowRight, 
-  ChevronRight, 
-  Download, 
-  MapPin, 
-  Briefcase, 
-  Calendar, 
-  Award, 
+import {
+  ArrowRight,
+  ChevronRight,
+  Download,
+  MapPin,
+  Briefcase,
+  Calendar,
+  Award,
   Sparkles,
   ExternalLink,
-  Plus
+  Plus,
+  Twitter,
+  Linkedin,
 } from "lucide-react";
 
 import { Navbar } from "./components/Navbar";
@@ -26,10 +28,14 @@ import { ContactForm } from "./components/ContactForm";
 import { Footer } from "./components/Footer";
 import { PERSONAL_INFO, PROJECTS, EXPERIENCE_HISTORY } from "./data";
 
+import MyImg from "./assets/images/my-img.jpg";
+
 export default function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showAllProjects, setShowAllProjects] = useState(false);
-  const [activeTab, setActiveTab] = useState<"highlights" | "all">("highlights");
+  const [activeTab, setActiveTab] = useState<"highlights" | "all">(
+    "highlights"
+  );
 
   // Track mouse coordinates on desktop for the ambient highlight cursor
   useEffect(() => {
@@ -40,21 +46,19 @@ export default function App() {
     return () => window.removeEventListener("mousemove", updateMouse);
   }, []);
 
-  const featuredProjects = PROJECTS.filter(p => p.featured);
-  const remainingProjects = PROJECTS.filter(p => !p.featured);
-  
-  const selectedProjects = activeTab === "highlights" 
-    ? featuredProjects 
-    : PROJECTS;
+  const featuredProjects = PROJECTS.filter((p) => p.featured);
+  const remainingProjects = PROJECTS.filter((p) => !p.featured);
+
+  const selectedProjects =
+    activeTab === "highlights" ? featuredProjects : PROJECTS;
 
   return (
     <div className="min-h-screen bg-black text-neutral-300 selection:bg-primary selection:text-white relative overflow-hidden font-sans">
-      
       {/* 1. Ambient Background Cursor Spotlight Overlay */}
-      <div 
+      <div
         className="fixed inset-0 pointer-events-none z-0 transition-opacity duration-1000 hidden md:block"
         style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(121, 92, 52, 0.08), transparent 80%)`
+          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(121, 92, 52, 0.08), transparent 80%)`,
         }}
       />
 
@@ -70,9 +74,11 @@ export default function App() {
       <Navbar />
 
       {/* 3. Hero Section */}
-      <header className="relative min-h-screen flex items-center justify-center pt-24 pb-16 z-10 px-6 sm:px-8 lg:px-12" id="hero">
+      <header
+        className="relative min-h-screen flex items-center justify-center pt-24 pb-16 z-10 px-6 sm:px-8 lg:px-12"
+        id="hero"
+      >
         <div className="max-w-4xl mx-auto text-center space-y-8 sm:space-y-10">
-          
           {/* Tagline Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -83,7 +89,7 @@ export default function App() {
           >
             <Sparkles size={11} className="text-primary animate-pulse" />
             <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent uppercase font-medium">
-              Frontend Developer
+              {PERSONAL_INFO.name}
             </span>
           </motion.div>
 
@@ -97,7 +103,7 @@ export default function App() {
               id="hero-main-title"
             >
               Welcome To My <br />
-              <span className="font-bold italic text-primary">Portfolio</span>
+              <span className="font-bold italic text-primary">Portfolio!</span>
             </motion.h1>
 
             {/* Invisible Stack Sub-headline */}
@@ -108,7 +114,8 @@ export default function App() {
               className="max-w-2xl mx-auto font-sans text-xs sm:text-sm md:text-base text-accent font-light leading-relaxed tracking-wider"
               id="hero-subtitle"
             >
-              Crafting high-performance, visually refined web experiences with React, TypeScript, and a minimalist lens. Styled with Tailwind CSS, secured server-side.
+              I'm a frontend developer who loves bringing ideas to life in the
+              browser. Take a look around!
             </motion.p>
           </div>
 
@@ -142,15 +149,19 @@ export default function App() {
             animate={{ opacity: [0, 0.4, 0] }}
             transition={{ duration: 2.2, repeat: Infinity, delay: 1 }}
             className="pt-12 sm:pt-20 flex flex-col items-center gap-1.5 font-mono text-[9px] uppercase text-neutral-500 tracking-widest cursor-pointer select-none"
-            onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() =>
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             id="hero-scroll-indicator"
           >
             <span>Read Bio & Experience</span>
             <div className="w-1.5 h-6 border border-neutral-600 rounded-full flex justify-center p-0.5">
-              <motion.div 
-                animate={{ y: [0, 6, 0] }} 
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
-                className="w-0.5 h-1.5 bg-primary rounded-full" 
+                className="w-0.5 h-1.5 bg-primary rounded-full"
               />
             </div>
           </motion.div>
@@ -158,81 +169,102 @@ export default function App() {
       </header>
 
       {/* 4. About Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32" id="about">
-        <SectionHeading 
-          title="About Me." 
-          subtitle="A blend of computational rigor and editorial design theory." 
+      <section
+        className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32"
+        id="about"
+      >
+        <SectionHeading
+          title="About Me."
+          subtitle="I love building things and solving problems!"
           badge="/ My Identity"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-start" id="about-contents-grid">
+        <div
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-start"
+          id="about-contents-grid"
+        >
           {/* Profile Bio Context Block */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
             <h3 className="font-display text-xl sm:text-2xl font-normal text-white leading-relaxed">
-              "Visual perfection is not just a layout exercise—it is an optimized bundle size, smooth animation choreography, and reliable database feedback loops."
+              "Visual perfection is not just a layout exercise—it is an
+              optimized bundle size, smooth animation choreography, and reliable
+              database feedback loops."
             </h3>
-            
+
             <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light">
-              Designing user interfaces requires an analytical appreciation for execution speeds. My bio is anchored upon translating pixel aesthetics into performant client architectures. I leverage type design principles combined with reliable static code structures (like strict TypeScript and native layout components) to deliver clean workspaces.
+              I am a Computer Science student and frontend developer with a
+              passion for turning complex problems into intuitive digital
+              experiences. My journey in tech is fueled by a deep curiosity
+              about how things work and a passion for creating impactful user
+              experiences on the web.
+            </p>
+
+            <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light">
+              Beyond the code editor, I am committed to continuous growth. When
+              I'm not coding or building, I watch football or playing video
+              games.
+            </p>
+
+            <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light">
+              If you'd like to collaborate or just talk, feel free to reach out!
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-primary/10">
               <div className="space-y-1">
-                <span className="block font-mono text-[10px] uppercase text-neutral-500">Residence</span>
+                <span className="block font-mono text-[10px] uppercase text-neutral-500">
+                  LinkdIn
+                </span>
                 <span className="flex items-center gap-1 font-sans text-sm text-neutral-200">
-                  <MapPin size={13} className="text-primary" />
-                  {PERSONAL_INFO.location}
+                  <a
+                    href={PERSONAL_INFO.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn Profile"
+                    className="p-2 bg-primary/5 hover:bg-primary/20 border border-primary/10 hover:border-primary/30 rounded-lg text-primary hover:text-white transition-all duration-300"
+                    id="footer-social-linkedin"
+                  >
+                    <Linkedin size={16} />
+                  </a>
                 </span>
               </div>
               <div className="space-y-1">
-                <span className="block font-mono text-[10px] uppercase text-neutral-500">Core Objective</span>
+                <span className="block font-mono text-[10px] uppercase text-neutral-500">
+                  Twitter
+                </span>
                 <span className="flex items-center gap-1 font-sans text-sm text-neutral-200">
-                  <Award size={13} className="text-primary animate-pulse" />
-                  Editorial-Grade UI
+                  <a
+                    href={PERSONAL_INFO.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter X Profile"
+                    className="p-2 bg-primary/5 hover:bg-primary/20 border border-primary/10 hover:border-primary/30 rounded-lg text-primary hover:text-white transition-all duration-300"
+                    id="footer-social-twitter"
+                  >
+                    <Twitter size={16} />
+                  </a>
                 </span>
               </div>
             </div>
           </div>
 
           {/* Holographic Interactive Showcase of Stats */}
-          <div className="lg:col-span-5 bg-[#0a0a0a] border border-primary/10 rounded-none p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden" id="about-stats-panel">
-            <div className="absolute top-2 right-2 flex gap-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            </div>
-
-            <span className="font-mono text-[9px] uppercase tracking-widest text-[#a68b6d]">
-              System Parameters:
-            </span>
-
-            <div className="mt-6 space-y-6 divide-y divide-primary/5">
-              <div className="flex justify-between items-center py-2 h-12">
-                <span className="font-mono text-xs text-neutral-400">FPS Render Objective</span>
-                <span className="font-mono text-xs text-primary font-bold">60 Constant Hz</span>
-              </div>
-              <div className="flex justify-between items-center py-2 pt-4 h-12">
-                <span className="font-mono text-xs text-neutral-400">Avg LCP metric</span>
-                <span className="font-mono text-xs text-white">&lt;0.8 Seconds</span>
-              </div>
-              <div className="flex justify-between items-center py-2 pt-4 h-12">
-                <span className="font-mono text-xs text-neutral-400">Total Code Coverage</span>
-                <span className="font-mono text-xs text-white font-medium">92% Strict Type</span>
-              </div>
-              <div className="flex justify-between items-center py-2 pt-4 h-12">
-                <span className="font-mono text-xs text-neutral-400">Experience Index</span>
-                <span className="font-mono text-xs text-primary font-bold">12+ Projects</span>
-              </div>
-            </div>
+          <div
+            className="lg:col-span-5 bg-[#0a0a0a] border border-primary/10 rounded-none p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden"
+            id="about-stats-panel"
+          >
+            <img src={MyImg} alt="myImg" />
           </div>
         </div>
       </section>
 
       {/* 5. Tech Stack Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32" id="tech-stack">
-        <SectionHeading 
-          title="My Tech Stack." 
-          subtitle="My curated compilation of frameworks, core compilers, and layout systems." 
+      <section
+        className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32"
+        id="tech-stack"
+      >
+        <SectionHeading
+          title="My Tech Stack."
+          subtitle="Here are some of the tools I work with."
           badge="/ Tools"
         />
 
@@ -241,64 +273,75 @@ export default function App() {
       </section>
 
       {/* 6. Projects Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32" id="projects">
+      <section
+        className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32"
+        id="projects"
+      >
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 sm:mb-12">
-          <SectionHeading 
-            title="Some Projects" 
-            subtitle="Engines, platforms, and interactive visual products crafted meticulously." 
+          <SectionHeading
+            title="Selected Projects"
+            subtitle="Here are some of the projects I've worked on."
             badge="/ Projects"
           />
 
           {/* Toggle Tab filters between Featured Highlights and All archives */}
-          <div className="flex items-center gap-1 border border-primary/20 p-1 bg-black/60 backdrop-blur rounded-none mb-8 sm:mb-0 shrink-0" id="project-toggle-tabs">
+          <div
+            className="flex items-center gap-1 border border-primary/20 p-1 bg-black/60 backdrop-blur rounded-none mb-8 sm:mb-0 shrink-0"
+            id="project-toggle-tabs"
+          >
             <button
               onClick={() => setActiveTab("highlights")}
               className={`px-4 py-1.5 font-mono text-[10px] tracking-wider uppercase rounded-none transition-colors duration-300 ${
-                activeTab === "highlights" 
-                  ? "bg-primary text-black font-semibold" 
+                activeTab === "highlights"
+                  ? "bg-primary text-black font-semibold"
                   : "text-neutral-400 hover:text-white"
               }`}
               id="tab-projects-highlights"
             >
-              Featured Only
+              Completed
             </button>
             <button
               onClick={() => setActiveTab("all")}
               className={`px-4 py-1.5 font-mono text-[10px] tracking-wider uppercase rounded-none transition-colors duration-300 ${
-                activeTab === "all" 
-                  ? "bg-primary text-black font-semibold" 
+                activeTab === "all"
+                  ? "bg-primary text-black font-semibold"
                   : "text-neutral-400 hover:text-white"
               }`}
               id="tab-projects-all"
             >
-              All Archives ({PROJECTS.length})
+              All Projects ({PROJECTS.length})
             </button>
           </div>
         </div>
 
         {/* Interactive Grid of Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8" id="projects-grid-root">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
+          id="projects-grid-root"
+        >
           <AnimatePresence mode="popLayout">
             {selectedProjects.map((project, idx) => (
-              <ProjectCard 
-                key={project.id} 
-                project={project} 
-                index={idx} 
-              />
+              <ProjectCard key={project.id} project={project} index={idx} />
             ))}
           </AnimatePresence>
         </div>
       </section>
 
       {/* 7. Career/Experience Timeline Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32" id="experience">
-        <SectionHeading 
-          title="Work Experience." 
-          subtitle="My professional contributions across design agencies and tech ventures." 
+      <section
+        className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32"
+        id="experience"
+      >
+        <SectionHeading
+          title="Work Experience."
+          subtitle="My professional contributions across design agencies and tech ventures."
           badge="/ Experience"
         />
 
-        <div className="max-w-4xl space-y-12 sm:space-y-16 relative" id="experience-timeline-container">
+        <div
+          className="max-w-4xl space-y-12 sm:space-y-16 relative"
+          id="experience-timeline-container"
+        >
           {/* Vertical axis line connecting milestones */}
           <div className="absolute top-4 bottom-4 left-6 md:left-1/2 w-[1px] bg-gradient-to-b from-primary/30 via-primary/50 to-transparent pointer-events-none" />
 
@@ -339,9 +382,20 @@ export default function App() {
                       <span>{exp.company}</span>
                     </h4>
 
-                    <p className="font-sans text-xs text-neutral-400 font-light leading-relaxed">
+                    {/* <p className="font-sans text-xs text-neutral-400 font-light leading-relaxed">
                       {exp.description}
-                    </p>
+                    </p> */}
+
+                    <ul className="marker:text-accent space-y-2 list-disc">
+                      {exp.description.map((desc) => (
+                        <li
+                          key={desc}
+                          className="font-sans text-xs text-neutral-400 font-light leading-relaxed"
+                        >
+                          {desc}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
@@ -354,10 +408,13 @@ export default function App() {
       </section>
 
       {/* 8. Contact Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32" id="contact">
-        <SectionHeading 
-          title="Establish Contact." 
-          subtitle="Formulate parameters to outline the specifications of your web build." 
+      <section
+        className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32"
+        id="contact"
+      >
+        <SectionHeading
+          title="Establish Contact."
+          subtitle="Formulate parameters to outline the specifications of your web build."
           badge="/ Dispatch Console"
         />
 

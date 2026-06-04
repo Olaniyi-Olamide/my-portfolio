@@ -14,12 +14,14 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full bg-black border-t border-primary/10 py-12 md:py-16 mt-20 relative overflow-hidden" id="main-footer">
+    <footer
+      className="w-full bg-black border-t border-primary/10 py-12 md:py-16 mt-20 relative overflow-hidden"
+      id="main-footer"
+    >
       {/* Subtle organic light accent behind footer */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 max-w-lg h-32 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 relative z-10">
-        
         {/* Left Side: Brand and short tagline */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
           <div className="font-display text-base font-semibold text-white tracking-tight">
@@ -27,7 +29,7 @@ export function Footer() {
             <span className="text-primary">.</span>
           </div>
           <p className="font-mono text-[10px] text-accent/60 tracking-wider uppercase">
-            Frontend Developer
+            {PERSONAL_INFO.role}
           </p>
         </div>
 
@@ -76,7 +78,7 @@ export function Footer() {
             <span className="text-[10px] tracking-wider uppercase">Top</span>
             <ArrowUp size={12} className="text-primary animate-bounce" />
           </button>
-          
+
           <p className="text-xs text-neutral-500 font-sans font-light">
             &copy; {currentYear} Olamide. All rights reserved.
           </p>

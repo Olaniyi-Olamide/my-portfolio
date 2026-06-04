@@ -6,109 +6,241 @@
 import { Project, Skill, Experience } from "./types";
 
 export const PERSONAL_INFO = {
-  name: "Olaniyi Olamide",
+  name: "Olamide Olaniyi",
   logoName: "Notbadthoo",
   role: "Junior Frontend Developer",
-  bio: "I specialize in constructing performant, visually refined web applications. By pairing motion choreography with elegant typography, I craft digital environments where engineering meets editorial-grade design.",
-  location: "London, UK",
+  bio: "I am a Computer Science student and frontend developer with a passion for turning complex problems into intuitive digital experiences. My journey in tech is fueled by a deep curiosity about how things work and a passion for creating impactful user experiences on the web.",
+  location: "Lagos, NG",
   email: "olamideolaniyi616@gmail.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
+  phone: "+234 9068295157",
+  github: "https://github.com/Olaniyi-Olamide",
+  linkedin: "https://linkedin.com/in/olaniyi-olamide-264557366/",
   twitter: "https://x.com/notbadthoo",
 };
 
 export const SKILLS: Skill[] = [
   // Languages
-  { name: "TypeScript", category: "Languages", iconName: "typescript", proficiency: 94 },
-  { name: "JavaScript (ES6+)", category: "Languages", iconName: "javascript", proficiency: 98 },
-  { name: "HTML5 & CSS3", category: "Languages", iconName: "htmlcss", proficiency: 98 },
-  
+  {
+    name: "TypeScript",
+    category: "Languages",
+    iconName: "typescript",
+    proficiency: 94,
+  },
+  {
+    name: "JavaScript (ES6+)",
+    category: "Languages",
+    iconName: "javascript",
+    proficiency: 98,
+  },
+  {
+    name: "HTML5 & CSS3",
+    category: "Languages",
+    iconName: "htmlcss",
+    proficiency: 98,
+  },
+
   // Frameworks
   { name: "React", category: "Frameworks", iconName: "react", proficiency: 96 },
   // { name: "Next.js", category: "Frameworks", iconName: "nextjs", proficiency: 90 },
-  { name: "Tailwind CSS", category: "Frameworks", iconName: "tailwind", proficiency: 98 },
-  { name: "Framer Motion", category: "Frameworks", iconName: "motion", proficiency: 92 },
-  
+  {
+    name: "Tailwind CSS",
+    category: "Frameworks",
+    iconName: "tailwind",
+    proficiency: 98,
+  },
+  {
+    name: "Framer Motion",
+    category: "Frameworks",
+    iconName: "motion",
+    proficiency: 92,
+  },
+
   // Backend & Tools
-  { name: "Supabase", category: "Backend/Tools", iconName: "supabase", proficiency: 88 },
+  {
+    name: "Supabase",
+    category: "Backend/Tools",
+    iconName: "supabase",
+    proficiency: 88,
+  },
   // { name: "GraphQL", category: "Backend/Tools", iconName: "graphql", proficiency: 80 },
-  { name: "Git & GitHub", category: "Backend/Tools", iconName: "github", proficiency: 92 },
-  { name: "Vite & Webpack", category: "Backend/Tools", iconName: "vite", proficiency: 90 },
-  
+  {
+    name: "Git & GitHub",
+    category: "Backend/Tools",
+    iconName: "github",
+    proficiency: 92,
+  },
+  {
+    name: "Vite & Webpack",
+    category: "Backend/Tools",
+    iconName: "vite",
+    proficiency: 90,
+  },
+
   // Design
   { name: "Figma", category: "Design", iconName: "figma", proficiency: 86 },
-  { name: "Typography", category: "Design", iconName: "typography", proficiency: 94 },
-  { name: "Motion Choreography", category: "Design", iconName: "motion", proficiency: 90 },
+  {
+    name: "Typography",
+    category: "Design",
+    iconName: "typography",
+    proficiency: 94,
+  },
+  {
+    name: "Motion Choreography",
+    category: "Design",
+    iconName: "motion",
+    proficiency: 90,
+  },
 ];
 
 export const EXPERIENCE_HISTORY: Experience[] = [
   {
-    role: "Lead Frontend Systems Engineer",
-    company: "Aura Design Studio",
-    period: "2024 - Present",
-    description: "Architecting high-performance serverless React applications and reusable visual language systems. Reduced bundle sizes by 32% and achieved perfect Lighthouse performance scores through aggressive chunk-splitting, tree-shaking, and lazy-rendering patterns.",
+    role: "Frontend Developer",
+    company: "Challenge Me Now",
+    period: "Mar 2026 - Present",
+    description: [
+      "Creating a mobile-first, responsive UI using Tailwind CSS to guarantee the assessment platform functions seamlessly across all devices",
+      "Utilizing TypeScript to strictly type complex data structures (such as quiz schemas and user metrics), ensuring a highly stable and error-free user experience.",
+      "Designing and building intuitive dashboards that visualize user analytics, including performance tracking, progress metrics, and pinpointed 'weak areas'.",
+    ],
   },
-  {
-    role: "Senior UI/UX Developer",
-    company: "Vellum Labs",
-    period: "2022 - 2024",
-    description: "Designed and engineered web-based publishing workspaces. Lead a team of 4 implementing a custom text formatting editor, real-time sync with offline support, and bespoke canvas layouts with smooth Framer Motion interactions.",
-  },
-  {
-    role: "Frontend Engineer",
-    company: "Zenith Software",
-    period: "2020 - 2022",
-    description: "Built financial analytics dashboards featuring heavy data visualization using D3.js and Recharts. Spearheaded migration from legacy JavaScript to modern strict TypeScript and Tailwind CSS.",
-  }
 ];
 
 export const PROJECTS: Project[] = [
   {
-    id: "aether",
-    title: "Aether Engine",
-    category: "Prototyping & Generative Design",
-    tagline: "Procedural web layout engine running on real-time physics constraints.",
-    description: "A generative canvas studio designed for creative technologists. Features automatic fluid grid generation, magnetic boundary anchors, and interactive vector generation driven by high-frequency layout computations.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Supabase"],
-    liveUrl: "https://example.com/aether",
-    githubUrl: "https://github.com",
-    image: "/src/assets/images/aether_preview_1780554128873.png",
+    id: "finder",
+    title: "Country Finder",
+    category: "Completed",
+    tagline:
+      "An app that helps you find information about any country in the world.",
+    description:
+      "Country Finder is a sleek, responsive web application that allows users to search for and explore detailed information about countries from around the globe. Built with user experience in mind, it features a seamless dark/light theme toggle and fetches real-time data to display key insights.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React",
+      "Shadcn",
+    ],
+    liveUrl: "https://search-countries-with-rest-api.netlify.app",
+    githubUrl:
+      "https://github.com/Olaniyi-Olamide/rest-countries-api-with-color-theme-switcher.git",
+    image: "/src/assets/images/country.jpg",
     featured: true,
   },
   {
-    id: "vellum",
-    title: "Vellum Workspace",
-    category: "Productivity",
-    tagline: "Minimalist desktop-grade writing browser with local-first file replication.",
-    description: "A gorgeous, distraction-free environment for prose, code, and documentation. Powered by offline-first replication, multi-format markdown transformations, and micro-interactivity that adapts to reading velocities.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Lucide React"],
-    liveUrl: "https://example.com/vellum",
-    githubUrl: "https://github.com",
-    image: "/src/assets/images/vellum_preview_1780554153300.png",
+    id: "todo",
+    title: "Todo App",
+    category: "Completed",
+    tagline:
+      "The classic todo app with a few twists! This app includes a dark/light theme toggle ",
+    description:
+      "Todo App is a dynamic, highly interactive task management application designed to make organizing daily workflows engaging and effortless. Combining powerful organization tools with an interactive UI, it features a playful authentication flow and custom styling to make productivity feel less like a chore.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React",
+      "Shadcn",
+    ],
+    liveUrl: "https://personaltodolistapp.netlify.app",
+    githubUrl: "https://github.com/Olaniyi-Olamide/personal-todo-list-app.git",
+    image: "/src/assets/images/Todo.jpg",
     featured: true,
   },
   {
-    id: "chronos",
-    title: "Chronos Analytics",
-    category: "Finance & WebGL",
-    tagline: "High-frequency dashboard featuring interactive trading visualizers.",
-    description: "A high-performance charting interface displaying complex streaming metrics. Standardized rendering pipelines, sub-millisecond response visualizers, and interactive filters with customized high-contrast telemetry lines.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Motion", "Vite"],
-    liveUrl: "https://example.com/chronos",
-    githubUrl: "https://github.com",
-    image: "/src/assets/images/chronos_preview_1780554173070.png",
-    featured: false,
+    id: "cart",
+    title: "Product List With Cart App",
+    category: "Completed",
+    tagline: "",
+    description:
+      "Product List with Cart is a highly interactive, state-driven e-commerce interface designed for a seamless shopping experience. It features a responsive product grid, a dynamic real-time shopping cart, and precise state management to handle item quantities, order confirmations, and total calculations effortlessly.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://productlistwithcartapp.netlify.app",
+    githubUrl:
+      "https://github.com/Olaniyi-Olamide/product-list-with-cart-app.git",
+    image: "/src/assets/images/productListQithCart.jpg",
+    featured: true,
   },
   {
-    id: "helix",
-    title: "Helix Web Studio",
-    category: "SaaS & Collaboration",
-    tagline: "Real-time canvas platform for multi-user visual layouts.",
-    description: "A collaborative sandbox for digital designers to prototype layouts in real time. Features pixel-perfect cursors, instant style overrides, shared asset libraries, and server-coordinated project persistence.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Supabase"],
-    liveUrl: "https://example.com/helix",
-    githubUrl: "https://github.com",
-    image: "/src/assets/images/helix_preview_1780554191068.png",
-    featured: false,
-  }
+    id: "mortgage",
+    title: "Mortgage Repayment Calculator",
+    category: "Completed",
+    tagline: "Built for calculating complex home loans seamlessly.",
+    description:
+      "Mortgage Repayment Calculator is a high-precision financial tool designed to simplify complex home loan calculations. Built to deliver instant clarity, it estimates monthly payments and total long-term interest based on loan amounts, interest rates, and terms, providing a comprehensive financial breakdown with a clean, user-friendly interface.",
+    tech: ["React", "JavaScript", "Tailwind CSS"],
+    liveUrl: "https://mortgage-repayment-calculator-app.netlify.app",
+    githubUrl:
+      "https://github.com/Olaniyi-Olamide/mortgage-repayment-calculator.git",
+    image: "/src/assets/images/mortgageCalculator.jpg",
+    featured: true,
+  },
+  {
+    id: "e-commerce",
+    title: "E-commerce Product Page",
+    category: "Completed",
+    tagline: "",
+    description:
+      "E-commerce Product Page is a premium, feature-rich product showcase designed with conversion and user immersion in mind. It replicates a high-end retail experience, featuring fluid image galleries, responsive interactive states, and a dynamic cart preview, all packaged within a polished, accessible user interface.",
+    tech: ["HTML", "JavaScript", "Tailwind CSS"],
+    liveUrl: "https://e-commerceproductpage-abc.netlify.app",
+    githubUrl: "https://github.com/Olaniyi-Olamide/E-COMMERCE-PRODUCT-PAGE.git",
+    image: "/src/assets/images/e-comerce.jpg",
+    featured: true,
+  },
+  {
+    id: "advise",
+    title: "Advise Generator App",
+    category: "Completed",
+    tagline: "A simple application that generates advice.",
+    description:
+      "Advice Generator is a minimalist, responsive web application designed to deliver a quick dose of wisdom or inspiration at the click of a button.",
+    tech: ["HTML", "JavaScript", "CSS"],
+    liveUrl: "https://advicegeneratorappproject.netlify.app",
+    githubUrl: "https://github.com/Olaniyi-Olamide/ADVICE-GENERATOR-APP.git",
+    image: "/src/assets/images/advisegenerator.jpg",
+    featured: true,
+  },
+  {
+    id: "age",
+    title: "Age Calculator App",
+    category: "Completed",
+    tagline: "A simple app for calculating how old you are.",
+    description:
+      "Age Calculator is a precision web application that instantly determines a user's exact age based on their birthdate. Built with custom validation and a flawless layout, it breaks down age into precise metrics while offering a personalized UI experience.",
+    tech: ["HTML", "JavaScript", "CSS"],
+    liveUrl: "https://agecalculatorprojectapp.netlify.app",
+    githubUrl: "https://github.com/Olaniyi-Olamide/AGE-CALCULATOR.git",
+    image: "/src/assets/images/ageCalculator.jpg",
+    featured: true,
+  },
+  {
+    id: "splitter",
+    title: "Splitter",
+    category: "Completed",
+    tagline: "An app for splitting and calculating tips.",
+    description:
+      "Splitter is a sleek, highly intuitive tip calculator designed to take the math out of dining out. Whether you're paying solo or splitting a large bill among friends, the app instantly calculates the exact tip amount and total cost per person with zero friction.",
+    tech: ["HTML", "JavaScript", "Tailwind CSS"],
+    liveUrl: "https://tipcalculatorappproject.netlify.app",
+    githubUrl: "https://github.com/Olaniyi-Olamide/Tip-Calculator-App.git",
+    image: "/src/assets/images/tipCalculator.jpg",
+    featured: true,
+  },
+  {
+    id: "extentions",
+    title: "Extentions",
+    category: "Completed",
+    tagline: "A simple UI of a browser extension ",
+    description:
+      "Extensions is a sleek browser extension UI with a modern design with features like theme toogle, sorting, etc",
+    tech: ["HTML", "JavaScript", "Tailwind CSS"],
+    liveUrl: "https://browserextention.netlify.app",
+    githubUrl:
+      "https://github.com/Olaniyi-Olamide/BROWSER-EXTENTION-MANAGER-UI.git",
+    image: "/src/assets/images/browserUI.jpg",
+    featured: true,
+  },
 ];
