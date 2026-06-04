@@ -125,7 +125,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://search-countries-with-rest-api.netlify.app",
     githubUrl:
       "https://github.com/Olaniyi-Olamide/rest-countries-api-with-color-theme-switcher.git",
-    image: "/src/assets/images/country.jpg",
+    image: "/images/country.jpg",
     featured: true,
   },
   {
@@ -146,7 +146,7 @@ export const PROJECTS: Project[] = [
     ],
     liveUrl: "https://personaltodolistapp.netlify.app",
     githubUrl: "https://github.com/Olaniyi-Olamide/personal-todo-list-app.git",
-    image: "/src/assets/images/Todo.jpg",
+    image: "/images/Todo.jpg",
     featured: true,
   },
   {
@@ -160,7 +160,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://productlistwithcartapp.netlify.app",
     githubUrl:
       "https://github.com/Olaniyi-Olamide/product-list-with-cart-app.git",
-    image: "/src/assets/images/productListQithCart.jpg",
+    image: "/images/productListQithCart.jpg",
     featured: true,
   },
   {
@@ -174,7 +174,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://mortgage-repayment-calculator-app.netlify.app",
     githubUrl:
       "https://github.com/Olaniyi-Olamide/mortgage-repayment-calculator.git",
-    image: "/src/assets/images/mortgageCalculator.jpg",
+    image: "/images/mortgageCalculator.jpg",
     featured: true,
   },
   {
@@ -187,7 +187,7 @@ export const PROJECTS: Project[] = [
     tech: ["HTML", "JavaScript", "Tailwind CSS"],
     liveUrl: "https://e-commerceproductpage-abc.netlify.app",
     githubUrl: "https://github.com/Olaniyi-Olamide/E-COMMERCE-PRODUCT-PAGE.git",
-    image: "/src/assets/images/e-comerce.jpg",
+    image: "/images/e-comerce.jpg",
     featured: true,
   },
   {
@@ -200,7 +200,7 @@ export const PROJECTS: Project[] = [
     tech: ["HTML", "JavaScript", "CSS"],
     liveUrl: "https://advicegeneratorappproject.netlify.app",
     githubUrl: "https://github.com/Olaniyi-Olamide/ADVICE-GENERATOR-APP.git",
-    image: "/src/assets/images/advisegenerator.jpg",
+    image: "/images/advisegenerator.jpg",
     featured: true,
   },
   {
@@ -213,7 +213,7 @@ export const PROJECTS: Project[] = [
     tech: ["HTML", "JavaScript", "CSS"],
     liveUrl: "https://agecalculatorprojectapp.netlify.app",
     githubUrl: "https://github.com/Olaniyi-Olamide/AGE-CALCULATOR.git",
-    image: "/src/assets/images/ageCalculator.jpg",
+    image: "/images/ageCalculator.jpg",
     featured: true,
   },
   {
@@ -226,7 +226,7 @@ export const PROJECTS: Project[] = [
     tech: ["HTML", "JavaScript", "Tailwind CSS"],
     liveUrl: "https://tipcalculatorappproject.netlify.app",
     githubUrl: "https://github.com/Olaniyi-Olamide/Tip-Calculator-App.git",
-    image: "/src/assets/images/tipCalculator.jpg",
+    image: "/images/tipCalculator.jpg",
     featured: true,
   },
   {
@@ -240,7 +240,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://browserextention.netlify.app",
     githubUrl:
       "https://github.com/Olaniyi-Olamide/BROWSER-EXTENTION-MANAGER-UI.git",
-    image: "/src/assets/images/browserUI.jpg",
+    image: "/images/browserUI.jpg",
     featured: true,
   },
 ];

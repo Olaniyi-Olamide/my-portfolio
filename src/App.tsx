@@ -28,8 +28,6 @@ import { ContactForm } from "./components/ContactForm";
 import { Footer } from "./components/Footer";
 import { PERSONAL_INFO, PROJECTS, EXPERIENCE_HISTORY } from "./data";
 
-import MyImg from "./assets/images/my-img.jpg";
-
 export default function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -180,11 +178,11 @@ export default function App() {
         />
 
         <div
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-start"
+          className="grid grid-cols-1  lg:grid-cols-12 gap-12 sm:gap-16 items-start"
           id="about-contents-grid"
         >
           {/* Profile Bio Context Block */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 order-2 lg:order-1">
             <h3 className="font-display text-xl sm:text-2xl font-normal text-white leading-relaxed">
               "Visual perfection is not just a layout exercise—it is an
               optimized bundle size, smooth animation choreography, and reliable
@@ -247,12 +245,11 @@ export default function App() {
             </div>
           </div>
 
-          {/* Holographic Interactive Showcase of Stats */}
           <div
-            className="lg:col-span-5 bg-[#0a0a0a] border border-primary/10 rounded-none p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden"
+            className="lg:col-span-5 bg-[#0a0a0a] border border-primary/10 rounded-none p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden order-1 lg:order-2"
             id="about-stats-panel"
           >
-            <img src={MyImg} alt="myImg" />
+            <img src="images/my-img.jpg" alt="myImg" />
           </div>
         </div>
       </section>
