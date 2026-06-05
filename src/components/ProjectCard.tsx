@@ -32,21 +32,22 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <span className="font-mono text-[10px] text-muted-accent tracking-widest uppercase">
-              {String(index + 1).padStart(2, "0")} / {project.category.toUpperCase()}
+              {String(index + 1).padStart(2, "0")} /{" "}
+              {project.category.toUpperCase()}
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col items-center gap-1">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`View ${project.title} on GitHub`}
-                className="text-neutral-500 hover:text-white transition-colors duration-200"
+                className="text-neutral-500 hover:text-white transition-colors duration-200 flex items-center justify-center gap-1.5"
                 id={`project-github-${project.id}`}
               >
-                <Github size={16} />
+                Github Url <Github size={16} />
               </a>
             )}
             {project.liveUrl && (
@@ -55,9 +56,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`View ${project.title} live demo`}
-                className="text-neutral-500 hover:text-primary transition-colors duration-200"
+                className="text-neutral-500 hover:text-primary transition-colors duration-200 flex items-center justify-center gap-1.5"
                 id={`project-live-${project.id}`}
               >
+                Project Url
                 <ExternalLink size={16} />
               </a>
             )}
@@ -67,9 +69,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         {/* Project Image Preview */}
         {project.image && (
           <div className="w-full aspect-[16/10] overflow-hidden mb-6 bg-black border border-[#795c34]/15 relative">
-            <img 
-              src={project.image} 
-              alt={project.title} 
+            <img
+              src={project.image}
+              alt={project.title}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500"
             />
@@ -80,7 +82,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-[#a68b6d] transition-colors duration-300">
           {project.title}
         </h3>
-        
+
         <p className="font-sans text-sm text-accent leading-relaxed font-normal mb-4">
           {project.tagline}
         </p>

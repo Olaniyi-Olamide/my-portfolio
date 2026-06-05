@@ -3,6 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+const principles = [
+  {
+    id: 1,
+    title: "Component-Driven",
+    icon: <Boxes />,
+  },
+  {
+    id: 2,
+    title: "Responsive Design",
+    icon: <Smartphone />,
+  },
+  {
+    id: 3,
+    title: "Optimized Performance",
+    icon: <Zap />,
+  },
+  {
+    id: 4,
+    title: "Type-Safe & Robust",
+    icon: <ShieldCheck />,
+  },
+];
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
@@ -18,6 +41,10 @@ import {
   Plus,
   Twitter,
   Linkedin,
+  Boxes,
+  Smartphone,
+  Zap,
+  ShieldCheck,
 } from "lucide-react";
 
 import { Navbar } from "./components/Navbar";
@@ -173,7 +200,7 @@ export default function App() {
       >
         <SectionHeading
           title="About Me."
-          subtitle="I love building things and solving problems!"
+          subtitle="I love building softwares and solving problems!"
           badge="/ My Identity"
         />
 
@@ -182,13 +209,7 @@ export default function App() {
           id="about-contents-grid"
         >
           {/* Profile Bio Context Block */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 order-2 lg:order-1">
-            <h3 className="font-display text-xl sm:text-2xl font-normal text-white leading-relaxed">
-              "Visual perfection is not just a layout exercise—it is an
-              optimized bundle size, smooth animation choreography, and reliable
-              database feedback loops."
-            </h3>
-
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
             <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light">
               I am a Computer Science student and frontend developer with a
               passion for turning complex problems into intuitive digital
@@ -202,8 +223,36 @@ export default function App() {
               I'm not coding or building, I watch football or playing video
               games.
             </p>
+            <div className="border-l-4 border-accent pl-1 rounded-l-lg">
+              <h3 className="font-display text-xl sm:text-2xl font-normal text-white leading-relaxed">
+                "Visual perfection is not just a layout exercise; it is an
+                optimized bundle size, smooth animation choreography, and
+                reliable database feedback loops."
+              </h3>
+            </div>
+          </div>
 
-            <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light">
+          <div className="lg:col-span-5">
+            <div
+              className="lg:col-span-5 bg-[#0a0a0a] border border-primary/10 rounded-none p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden space-y-7"
+              id="my-approach"
+            >
+              <h3 className="font-bold text-lg">My Approach</h3>
+
+              <div className="grid grid-cols-2 text-primary gap-4">
+                {principles.map((p) => (
+                  <span
+                    key={p.id}
+                    className="border rounded-xl border-accent p-3 flex flex-col gap-2"
+                  >
+                    {p.icon}
+                    <p className="text-[1rem] font-bold">{p.title}</p>
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light my-[1rem]">
               If you'd like to collaborate or just talk, feel free to reach out!
             </p>
 
@@ -243,13 +292,6 @@ export default function App() {
                 </span>
               </div>
             </div>
-          </div>
-
-          <div
-            className="lg:col-span-5 bg-[#0a0a0a] border border-primary/10 rounded-none p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden order-1 lg:order-2"
-            id="about-stats-panel"
-          >
-            <img src="images/my-img.jpg" alt="myImg" />
           </div>
         </div>
       </section>
@@ -409,13 +451,8 @@ export default function App() {
         className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32"
         id="contact"
       >
-        <SectionHeading
-          title="Establish Contact."
-          subtitle="Formulate parameters to outline the specifications of your web build."
-          badge="/ Dispatch Console"
-        />
+        <SectionHeading title="Get in touch" subtitle="" badge="/ Contact Me" />
 
-        {/* Standard Web Contact Form with dual real-time state and storage persistent client fallback */}
         <ContactForm />
       </section>
 
