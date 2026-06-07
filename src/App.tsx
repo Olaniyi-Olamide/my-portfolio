@@ -58,9 +58,7 @@ import { PERSONAL_INFO, PROJECTS, EXPERIENCE_HISTORY } from "./data";
 export default function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showAllProjects, setShowAllProjects] = useState(false);
-  const [activeTab, setActiveTab] = useState<"highlights" | "all">(
-    "highlights"
-  );
+  const [activeTab, setActiveTab] = useState<"highlights" | "all">("all");
 
   // Track mouse coordinates on desktop for the ambient highlight cursor
   useEffect(() => {

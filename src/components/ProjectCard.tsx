@@ -47,7 +47,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 className="text-neutral-500 hover:text-white transition-colors duration-200 flex items-center justify-center gap-1.5"
                 id={`project-github-${project.id}`}
               >
-                Github Url <Github size={16} />
+                View Repo <Github size={16} />
               </a>
             )}
             {project.liveUrl && (
@@ -59,7 +59,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 className="text-neutral-500 hover:text-primary transition-colors duration-200 flex items-center justify-center gap-1.5"
                 id={`project-live-${project.id}`}
               >
-                Project Url
+                View Project
                 <ExternalLink size={16} />
               </a>
             )}
