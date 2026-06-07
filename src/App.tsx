@@ -72,7 +72,7 @@ export default function App() {
   }, []);
 
   const featuredProjects = PROJECTS.filter((p) => p.featured);
-  const remainingProjects = PROJECTS.filter((p) => !p.featured);
+  // const remainingProjects = PROJECTS.filter((p) => !p.featured);
 
   const selectedProjects =
     activeTab === "highlights" ? featuredProjects : PROJECTS;
@@ -139,7 +139,7 @@ export default function App() {
               className="max-w-2xl mx-auto font-sans text-xs sm:text-sm md:text-base text-accent font-light leading-relaxed tracking-wider"
               id="hero-subtitle"
             >
-              I'm a frontend developer who loves bringing ideas to life in the
+              I am a frontend developer who loves bringing ideas to life in the
               browser. Take a look around!
             </motion.p>
           </div>
@@ -220,8 +220,8 @@ export default function App() {
 
             <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light">
               Beyond the code editor, I am committed to continuous growth. When
-              I'm not coding or building, I watch football or playing video
-              games.
+              I am not coding or building, I am watching football or playing
+              video games.
             </p>
             <div className="border-l-4 border-accent pl-1 rounded-l-lg">
               <h3 className="font-display text-xl sm:text-2xl font-normal text-white leading-relaxed">
@@ -237,7 +237,7 @@ export default function App() {
               className="lg:col-span-5 bg-[#0a0a0a] border border-primary/10 rounded-none p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden space-y-7"
               id="my-approach"
             >
-              <h3 className="font-bold text-lg">My Approach</h3>
+              <h3 className="italic font-bold text-xl">My Approach</h3>
 
               <div className="grid grid-cols-2 text-primary gap-4">
                 {principles.map((p) => (
@@ -253,7 +253,8 @@ export default function App() {
             </div>
 
             <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light my-[1rem]">
-              If you'd like to collaborate or just talk, feel free to reach out!
+              If you would like to collaborate or just talk, feel free to reach
+              out!
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-primary/10">
@@ -329,26 +330,26 @@ export default function App() {
             id="project-toggle-tabs"
           >
             <button
-              onClick={() => setActiveTab("highlights")}
-              className={`px-4 py-1.5 font-mono text-[10px] tracking-wider uppercase rounded-none transition-colors duration-300 ${
-                activeTab === "highlights"
-                  ? "bg-primary text-black font-semibold"
-                  : "text-neutral-400 hover:text-white"
-              }`}
-              id="tab-projects-highlights"
-            >
-              Completed
-            </button>
-            <button
               onClick={() => setActiveTab("all")}
               className={`px-4 py-1.5 font-mono text-[10px] tracking-wider uppercase rounded-none transition-colors duration-300 ${
                 activeTab === "all"
                   ? "bg-primary text-black font-semibold"
                   : "text-neutral-400 hover:text-white"
               }`}
+              id="tab-projects-highlights"
+            >
+              All Projects
+            </button>
+            <button
+              onClick={() => setActiveTab("highlights")}
+              className={`px-4 py-1.5 font-mono text-[10px] tracking-wider uppercase rounded-none transition-colors duration-300 ${
+                activeTab === "highlights"
+                  ? "bg-primary text-black font-semibold"
+                  : "text-neutral-400 hover:text-white"
+              }`}
               id="tab-projects-all"
             >
-              All Projects ({PROJECTS.length})
+              Completed
             </button>
           </div>
         </div>
@@ -373,7 +374,7 @@ export default function App() {
       >
         <SectionHeading
           title="Work Experience."
-          subtitle="My professional contributions across design agencies and tech ventures."
+          subtitle="My professional contributions across tech ventures."
           badge="/ Experience"
         />
 

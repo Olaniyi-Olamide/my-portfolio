@@ -10,8 +10,8 @@ export interface Project {
   tagline: string;
   description: string;
   tech: string[];
-  liveUrl?: string;
-  githubUrl?: string;
+  liveUrl?: string | null;
+  githubUrl?: string | null;
   image?: string;
   featured?: boolean;
 }

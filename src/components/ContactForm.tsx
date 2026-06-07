@@ -23,8 +23,7 @@ export function ContactForm() {
         </h3>
         <p className="font-sans text-md text-accent leading-relaxed mb-6 font-light">
           Whether you want to talk about a potential project or ask a question,
-          my inbox is always open. I'll do my best to get back to your within 24
-          hours!
+          my inbox is always open.
         </p>
         <button className="w-full flex gap-3 items-center justify-center rounded-full px-8 py-4 border border-primary text-primary font-bold uppercase tracking-widest text-xs hover:bg-primary/10 transition-all duration-300 pointer-events-auto">
           <Mail />

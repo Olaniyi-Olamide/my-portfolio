@@ -80,7 +80,7 @@ export function Footer() {
           </button>
 
           <p className="text-xs text-neutral-500 font-sans font-light">
-            &copy; {currentYear} Olamide. All rights reserved.
+            &copy; {currentYear} Olamide Olaniyi. All rights reserved.
           </p>
         </div>
       </div>

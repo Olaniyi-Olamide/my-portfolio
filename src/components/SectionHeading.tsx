@@ -12,9 +12,14 @@ interface SectionHeadingProps {
   badge?: string;
 }
 
-export function SectionHeading({ id, title, subtitle, badge }: SectionHeadingProps) {
+export function SectionHeading({
+  id,
+  title,
+  subtitle,
+  badge,
+}: SectionHeadingProps) {
   return (
-    <div id={id} className="relative mb-12 sm:mb-16 md:mb-20">
+    <div id={id} className="relative mb-8 sm:mb-16 md:mb-14">
       {badge && (
         <motion.span
           initial={{ opacity: 0, y: 10 }}
@@ -26,7 +31,7 @@ export function SectionHeading({ id, title, subtitle, badge }: SectionHeadingPro
           {badge}
         </motion.span>
       )}
-      
+
       <motion.h2
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +41,7 @@ export function SectionHeading({ id, title, subtitle, badge }: SectionHeadingPro
       >
         {title}
       </motion.h2>
-      
+
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +51,7 @@ export function SectionHeading({ id, title, subtitle, badge }: SectionHeadingPro
       >
         {subtitle}
       </motion.p>
-      
+
       {/* Decorative premium line */}
       <div className="absolute -left-6 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/30 to-transparent hidden md:block" />
     </div>

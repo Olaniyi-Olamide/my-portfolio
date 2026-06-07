@@ -12,7 +12,6 @@ export const PERSONAL_INFO = {
   bio: "I am a Computer Science student and frontend developer with a passion for turning complex problems into intuitive digital experiences. My journey in tech is fueled by a deep curiosity about how things work and a passion for creating impactful user experiences on the web.",
   location: "Lagos, NG",
   email: "olamideolaniyi616@gmail.com",
-  phone: "+234 9068295157",
   github: "https://github.com/Olaniyi-Olamide",
   linkedin: "https://linkedin.com/in/olaniyi-olamide-264557366/",
   twitter: "https://x.com/notbadthoo",
@@ -24,13 +23,13 @@ export const SKILLS: Skill[] = [
     name: "TypeScript",
     category: "Languages",
     iconName: "typescript",
-    proficiency: 94,
+    proficiency: 85,
   },
   {
     name: "JavaScript (ES6+)",
     category: "Languages",
     iconName: "javascript",
-    proficiency: 98,
+    proficiency: 90,
   },
   {
     name: "HTML5 & CSS3",
@@ -46,13 +45,13 @@ export const SKILLS: Skill[] = [
     name: "Tailwind CSS",
     category: "Frameworks",
     iconName: "tailwind",
-    proficiency: 98,
+    proficiency: 95,
   },
   {
     name: "Framer Motion",
     category: "Frameworks",
     iconName: "motion",
-    proficiency: 92,
+    proficiency: 80,
   },
 
   // Backend & Tools
@@ -60,14 +59,14 @@ export const SKILLS: Skill[] = [
     name: "Supabase",
     category: "Backend/Tools",
     iconName: "supabase",
-    proficiency: 88,
+    proficiency: 50,
   },
   // { name: "GraphQL", category: "Backend/Tools", iconName: "graphql", proficiency: 80 },
   {
     name: "Git & GitHub",
     category: "Backend/Tools",
     iconName: "github",
-    proficiency: 92,
+    proficiency: 82,
   },
   {
     name: "Vite & Webpack",
@@ -77,25 +76,19 @@ export const SKILLS: Skill[] = [
   },
 
   // Design
-  { name: "Figma", category: "Design", iconName: "figma", proficiency: 86 },
+  { name: "Figma", category: "Design", iconName: "figma", proficiency: 79 },
   {
     name: "Typography",
     category: "Design",
     iconName: "typography",
     proficiency: 94,
   },
-  {
-    name: "Motion Choreography",
-    category: "Design",
-    iconName: "motion",
-    proficiency: 90,
-  },
 ];
 
 export const EXPERIENCE_HISTORY: Experience[] = [
   {
     role: "Frontend Developer",
-    company: "Challenge Me Now",
+    company: "ChallengeMeNow",
     period: "Mar 2026 - Present",
     description: [
       "Creating a mobile-first, responsive UI using Tailwind CSS to guarantee the assessment platform functions seamlessly across all devices",
@@ -106,6 +99,26 @@ export const EXPERIENCE_HISTORY: Experience[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    id: "cmn",
+    title: "ChallengeMeNow",
+    category: "In Development",
+    tagline:
+      "Created with the goal of eliminating guesswork about skill levels by providing measurable proof of proficiency for developers.",
+    description:
+      "ChallengeMeNow is a timed skill-assessment platform that let users prove their real knowledge in various tech skills through real-world challenges under pressure. Features granular scoring, weak area detection, and progress tracking.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React",
+    ],
+    liveUrl: "https://challengemenow.xyz",
+    githubUrl: null,
+    image: "/images/cmn.png",
+    featured: false,
+  },
   {
     id: "finder",
     title: "Country Finder",
