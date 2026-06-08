@@ -31,7 +31,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         {/* Header containing meta/category & links */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[10px] text-muted-accent tracking-widest uppercase">
+            <span className="font-mono text-[14px] text-muted-accent tracking-widest uppercase">
               {String(index + 1).padStart(2, "0")} /{" "}
               {project.category.toUpperCase()}
             </span>
@@ -79,16 +79,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         )}
 
         {/* Title & Tagline */}
-        <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-[#a68b6d] transition-colors duration-300">
+        <h3 className="font-display text-2xl font-bold text-white mb-2 group-hover:text-[#a68b6d] transition-colors duration-300">
           {project.title}
         </h3>
 
-        <p className="font-sans text-sm text-accent leading-relaxed font-normal mb-4">
+        <p className="font-sans text-[1rem] text-accent leading-relaxed font-normal mb-4">
           {project.tagline}
         </p>
 
         {/* Expanded Description */}
-        <p className="font-sans text-xs text-neutral-400 font-light leading-relaxed mb-6">
+        <p className="font-sans text-[1rem] text-neutral-400 font-light leading-relaxed mb-6">
           {project.description}
         </p>
       </div>
@@ -102,7 +102,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           {project.tech.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-0.5 text-[9px] font-mono text-[#a68b6d] border border-[#795c34]/20 rounded-none bg-black"
+              className="px-2 py-0.5 text-[11px] font-mono text-[#a68b6d] border border-[#795c34]/20 rounded-none bg-black"
             >
               {tag}
             </span>

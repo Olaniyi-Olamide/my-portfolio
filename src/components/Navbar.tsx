@@ -146,7 +146,7 @@ export function Navbar() {
 
             <div className="pt-6 border-t border-primary/10">
               <div className="flex items-center gap-2 text-xs font-mono text-[#a68b6d]">
-                <Globe size={13} className="text-primary animate-pulse" />
+                <Globe size={16} className="text-primary animate-pulse" />
                 <span>Based in {PERSONAL_INFO.location}</span>
               </div>
             </div>

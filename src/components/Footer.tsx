@@ -28,7 +28,7 @@ export function Footer() {
             <span>{PERSONAL_INFO.name}</span>
             <span className="text-primary">.</span>
           </div>
-          <p className="font-mono text-[10px] text-accent/60 tracking-wider uppercase">
+          <p className="font-mono text-xs text-accent/60 tracking-wider uppercase">
             {PERSONAL_INFO.role}
           </p>
         </div>
@@ -43,7 +43,7 @@ export function Footer() {
             className="p-2 bg-primary/5 hover:bg-primary/20 border border-primary/10 hover:border-primary/30 rounded-lg text-primary hover:text-white transition-all duration-300"
             id="footer-social-github"
           >
-            <Github size={16} />
+            <Github size={20} />
           </a>
           <a
             href={PERSONAL_INFO.linkedin}
@@ -53,7 +53,7 @@ export function Footer() {
             className="p-2 bg-primary/5 hover:bg-primary/20 border border-primary/10 hover:border-primary/30 rounded-lg text-primary hover:text-white transition-all duration-300"
             id="footer-social-linkedin"
           >
-            <Linkedin size={16} />
+            <Linkedin size={20} />
           </a>
           <a
             href={PERSONAL_INFO.twitter}
@@ -63,7 +63,7 @@ export function Footer() {
             className="p-2 bg-primary/5 hover:bg-primary/20 border border-primary/10 hover:border-primary/30 rounded-lg text-primary hover:text-white transition-all duration-300"
             id="footer-social-twitter"
           >
-            <Twitter size={16} />
+            <Twitter size={20} />
           </a>
         </div>
 

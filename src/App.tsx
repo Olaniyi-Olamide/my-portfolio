@@ -111,8 +111,8 @@ export default function App() {
             id="hero-tag-badge"
           >
             <Sparkles size={11} className="text-primary animate-pulse" />
-            <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent uppercase font-medium">
-              {PERSONAL_INFO.name}
+            <span className="font-mono text-[14px]  tracking-widest text-accent uppercase font-medium">
+              {PERSONAL_INFO.role}
             </span>
           </motion.div>
 
@@ -125,8 +125,8 @@ export default function App() {
               className="font-display text-5xl sm:text-7xl md:text-8xl font-light tracking-tight text-white leading-[1.1]"
               id="hero-main-title"
             >
-              Welcome To My <br />
-              <span className="font-bold italic text-primary">Portfolio!</span>
+              Hello, I am <br />
+              <span className="font-bold italic text-primary">Olamide.</span>
             </motion.h1>
 
             {/* Invisible Stack Sub-headline */}
@@ -134,7 +134,7 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="max-w-2xl mx-auto font-sans text-xs sm:text-sm md:text-base text-accent font-light leading-relaxed tracking-wider"
+              className="max-w-2xl mx-auto font-sans text-lg text-accent font-light leading-relaxed tracking-wider"
               id="hero-subtitle"
             >
               I am a frontend developer who loves bringing ideas to life in the
@@ -208,7 +208,7 @@ export default function App() {
         >
           {/* Profile Bio Context Block */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-            <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light">
+            <p className="font-sans text-lg text-accent leading-relaxed font-light">
               I am a Computer Science student and frontend developer with a
               passion for turning complex problems into intuitive digital
               experiences. My journey in tech is fueled by a deep curiosity
@@ -216,7 +216,7 @@ export default function App() {
               experiences on the web.
             </p>
 
-            <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light">
+            <p className="font-sans text-lg sm:text-base text-accent leading-relaxed font-light">
               Beyond the code editor, I am committed to continuous growth. When
               I am not coding or building, I am watching football or playing
               video games.
@@ -250,17 +250,17 @@ export default function App() {
               </div>
             </div>
 
-            <p className="font-sans text-sm sm:text-base text-accent leading-relaxed font-light my-[1rem]">
+            <p className="font-sans text-lg text-accent leading-relaxed font-light my-[1rem]">
               If you would like to collaborate or just talk, feel free to reach
               out!
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-primary/10">
               <div className="space-y-1">
-                <span className="block font-mono text-[10px] uppercase text-neutral-500">
+                <span className="block font-mono text-xs uppercase text-neutral-500">
                   LinkdIn
                 </span>
-                <span className="flex items-center gap-1 font-sans text-sm text-neutral-200">
+                <span className="flex items-center gap-1 font-sans text-lg text-neutral-200">
                   <a
                     href={PERSONAL_INFO.linkedin}
                     target="_blank"
@@ -269,15 +269,15 @@ export default function App() {
                     className="p-2 bg-primary/5 hover:bg-primary/20 border border-primary/10 hover:border-primary/30 rounded-lg text-primary hover:text-white transition-all duration-300"
                     id="footer-social-linkedin"
                   >
-                    <Linkedin size={16} />
+                    <Linkedin size={20} />
                   </a>
                 </span>
               </div>
               <div className="space-y-1">
-                <span className="block font-mono text-[10px] uppercase text-neutral-500">
+                <span className="block font-mono text-xs uppercase text-neutral-500">
                   Twitter
                 </span>
-                <span className="flex items-center gap-1 font-sans text-sm text-neutral-200">
+                <span className="flex items-center gap-1 font-sans text-lg text-neutral-200">
                   <a
                     href={PERSONAL_INFO.twitter}
                     target="_blank"
@@ -286,7 +286,7 @@ export default function App() {
                     className="p-2 bg-primary/5 hover:bg-primary/20 border border-primary/10 hover:border-primary/30 rounded-lg text-primary hover:text-white transition-all duration-300"
                     id="footer-social-twitter"
                   >
-                    <Twitter size={16} />
+                    <Twitter size={20} />
                   </a>
                 </span>
               </div>
@@ -329,7 +329,7 @@ export default function App() {
           >
             <button
               onClick={() => setActiveTab("all")}
-              className={`px-4 py-1.5 font-mono text-[10px] tracking-wider uppercase rounded-none transition-colors duration-300 ${
+              className={`px-4 py-1.5 font-mono text-xs tracking-wider uppercase rounded-none transition-colors duration-300 ${
                 activeTab === "all"
                   ? "bg-primary text-black font-semibold"
                   : "text-neutral-400 hover:text-white"
@@ -340,7 +340,7 @@ export default function App() {
             </button>
             <button
               onClick={() => setActiveTab("highlights")}
-              className={`px-4 py-1.5 font-mono text-[10px] tracking-wider uppercase rounded-none transition-colors duration-300 ${
+              className={`px-4 py-1.5 font-mono text-xs tracking-wider uppercase rounded-none transition-colors duration-300 ${
                 activeTab === "highlights"
                   ? "bg-primary text-black font-semibold"
                   : "text-neutral-400 hover:text-white"
@@ -411,11 +411,11 @@ export default function App() {
                       <span>{exp.period}</span>
                     </div>
 
-                    <h3 className="font-display text-lg sm:text-xl font-medium text-white mb-1">
+                    <h3 className="font-display text-xl  font-medium text-white mb-1">
                       {exp.role}
                     </h3>
 
-                    <h4 className="font-mono text-xs text-accent mb-4 flex items-center gap-1.5">
+                    <h4 className="font-mono text-lg text-accent mb-4 flex items-center gap-1.5">
                       <Briefcase size={11} className="text-primary" />
                       <span>{exp.company}</span>
                     </h4>
@@ -428,7 +428,7 @@ export default function App() {
                       {exp.description.map((desc) => (
                         <li
                           key={desc}
-                          className="font-sans text-xs text-neutral-400 font-light leading-relaxed"
+                          className="font-sans text-[1rem] text-neutral-50 font-light leading-relaxed"
                         >
                           {desc}
                         </li>

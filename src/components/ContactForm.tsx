@@ -21,7 +21,7 @@ export function ContactForm() {
         <h3 className="font-display text-2xl sm:text-3xl font-medium text-white mb-4">
           Let's forge something meaningful together.
         </h3>
-        <p className="font-sans text-md text-accent leading-relaxed mb-6 font-light">
+        <p className="font-sans text-lg text-accent leading-relaxed mb-6 font-light">
           Whether you want to talk about a potential project or ask a question,
           my inbox is always open.
         </p>
